@@ -1,4 +1,4 @@
-@import "./index.scss";
+@import "../index.scss";
 
 
 .todo {
@@ -38,33 +38,37 @@
 }
 
 
-// Header
-.header {
-    background-color: $primary;
+.sidebar {
     display: flex;
-    align-items: center;
+    flex-direction: column;
 
-    gap: 20px;
-    height: $header-height;
-    padding: 5px 20px;
+}
 
-    &__logo {
-        font-size: 2.4rem;
-        color: white;
+.generic__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list {
+    &__container{
         display: flex;
-        cursor: pointer;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    &__text {
-        flex: 1;
-        color: white;
+    &__item {
+        display: flex;
+        align-items: baseline;
+        gap: 20px;
+        padding: 10px;
+        font-size: 1.8rem;
 
-        & > h1 {
-            font-size: 2.4rem;
+        &__icon {
+            align-self: flex-end;
         }
-    }
 
-    &__search {
-        min-width: 300px;
+        &__text{
+
+        }
     }
 }
