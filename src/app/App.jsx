@@ -2,6 +2,7 @@
 import './App.scss';
 import { FaHome, FaInbox, FaCalendar, FaChevronDown,FaCalendarAlt } from "react-icons/fa";
 import Header from '../component/Header'
+import Listitem from '../component/Listitem';
 
 function App() {
   return (
@@ -13,23 +14,26 @@ function App() {
         <aside className='sidebar'>
           <section className='sidebar__category'>
             <ul className='list'>
-              <li className='list__item'>
-                  <FaInbox />
-                <p className='list__item__text'>Inbox</p>
-              </li>
+              <Listitem text="Inbox" icon={<FaInbox/>} active={true}/>
+              <Listitem text="Today" icon={<FaCalendar/>} active={false}/>
+              <Listitem text="Next 7 Days" icon={<FaCalendarAlt/>} active={false}/>
             </ul>
-            <ul className='list'>
-              <li className='list__item'>
-                  <FaCalendar />
-                <p className='list__item__text'>Today</p>
-              </li>
+          </section>
+          <section className='sidebar__category'>
+            <div className = 'accordion'>
+              {/* toogle */}
+              <div className='accordion__toogle'>
+                <li className='accordion__item'>
+                  <FaChevronDown className='accordion__item__icon accordion__item__active'/>
+                  <p className='accordion__item__text'>Projects</p>
+                </li>
+              </div>
+              {/* Lists */}
+          <ul className='list'>
+              <Listitem text="Project-A" icon={<FaInbox/>} active={true}/>
+              <Listitem text="Project-B" icon={<FaInbox/>} active={false}/>
             </ul>
-            <ul className='list'>
-              <li className='list__item'>
-                  <FaCalendarAlt />
-                <p className='list__item__text'>Next 7 days</p>
-              </li>
-            </ul>
+            </div>
           </section>
         </aside>
       </div>
