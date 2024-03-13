@@ -41,34 +41,36 @@
 .sidebar {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    padding: 20px 30px;
+    height: calc(100vh - $header-height);
 
 }
 
-.generic__list {
+
+
+// Block
+.list {
     display: flex;
     flex-direction: column;
-}
+    gap: 5px;
 
-.list {
-    &__container{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    &:hover {
+        background-color: $grey-light;
     }
 
+    // Element
     &__item {
+        align-items: center;
         display: flex;
-        align-items: baseline;
-        gap: 20px;
-        padding: 10px;
+        gap: 15px;
         font-size: 1.8rem;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
 
-        &__icon {
-            align-self: flex-end;
-        }
-
-        &__text{
-
+        &__text {
+            font-weight: 400;
         }
     }
 }

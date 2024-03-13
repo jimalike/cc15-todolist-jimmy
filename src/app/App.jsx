@@ -1,6 +1,6 @@
 
 import './App.scss';
-import { FaHome, FaInbox, FaCalendar, FaChevronDown } from "react-icons/fa";
+import { FaHome, FaInbox, FaCalendar, FaChevronDown,FaCalendarAlt } from "react-icons/fa";
 import Header from '../component/Header'
 
 function App() {
@@ -11,13 +11,23 @@ function App() {
       </div>
       <div className="todo__sidebar">
         <aside className='sidebar'>
-          <section className='generic__lists'>
-            <ul className='list__container'>
+          <section className='sidebar__category'>
+            <ul className='list'>
               <li className='list__item'>
-                <span>
                   <FaInbox />
-                </span>
-                <p>Inbox</p>
+                <p className='list__item__text'>Inbox</p>
+              </li>
+            </ul>
+            <ul className='list'>
+              <li className='list__item'>
+                  <FaCalendar />
+                <p className='list__item__text'>Today</p>
+              </li>
+            </ul>
+            <ul className='list'>
+              <li className='list__item'>
+                  <FaCalendarAlt />
+                <p className='list__item__text'>Next 7 days</p>
               </li>
             </ul>
           </section>
