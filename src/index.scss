@@ -1,16 +1,46 @@
 /* Typography */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@400;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@400;600;700&display=swap");
 
 /* CSS-Variable */
 $primary: #db4c3f;
 $grey-light: #eaeaea;
 $grey-dark: #808080;
 $white: #fff;
+// color
+$grey-50: "#CDD0D5";
+$grey-100: "#C2C5CC";
+$grey-200: "#ACB0BA";
+$grey-300: "#969BA7";
+$grey-400: "#7F8694";
+$grey-500: "#6B7280";
+$grey-600: "#515761";
+$grey-700: "#383C43";
+$grey-800: "#1E2024";
+$grey-900: "#050506";
+$grey-950: "#000000";
 
 $header-height: 60px;
 $sidebar-width: 300px;
+$todo-content-padding: 15px;
+$circle:24px;
 /*  GLOBAL RESET */
+
+// fontsize
+
+$font-base: 1.6rem;
+$font-xl: 20px;
+
+$text-sx: 1.2rem;
+$text-sm: 1.4rem;
+$text-base: 1.6rem;
+$text-lg: 1.8rem;
+$text-xl: 2rem;
+$text-2xl: 2.4rem;
+$text-3xl: 3rem;
+$text-4xl: 3.6rem;
+$text-5xl: 4rem;
+
+
 
 *,
 *::after,
@@ -27,8 +57,19 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    "Nunito",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
