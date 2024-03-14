@@ -4,6 +4,9 @@ import { FaHome, FaInbox, FaCalendar, FaChevronDown, FaCalendarAlt } from "react
 import Header from '../component/Header'
 import Listitem from '../component/Listitem';
 import Lists from '../component/Lists'
+import TodoHeader from '../component/Todo/TodoHeader'
+import TodoCreate from '../component/Todo/TodoCreate'
+import TodoLists from '../component/Todo/TodoLists'
 
 function App() {
 
@@ -44,7 +47,17 @@ function App() {
           </section>
         </aside>
       </div>
-      <div className="todo__content">TodoContent</div>
+      <div className="todo__content">
+        <main className='todo__container'>
+          {/* Header */}
+          <TodoHeader/>
+
+          {/* CreateTodo */}
+          <TodoCreate/>
+          {/* Todolists */}
+          < TodoLists/>
+        </main>
+      </div>
     </div>
   );
 }
