@@ -8,16 +8,14 @@ import TodoForm from './TodoForm';
 import styles from './TodoCreate.module.scss';
 
 
-/*
-Condition Rendering
+/*Condition Rendering
 - Default : Show Button &Text
 - Active : Show TodoForm
 
 Concept : true ? <AddTasl/> : <TodoForm/>
 */
 
-/*
-  - EVENT HANDLING
+/*- EVENT HANDLING
   เอ่าฟังก์ชันไปผูกติดกับ UI เพื่อให้ USER เป็นคนเรียกใช้ฟังก์ชันเอง
   - OnClock : ต้อง Click ก่อน , FN ถึงจะรัน
     - User ทำการคลิก
@@ -29,11 +27,12 @@ Concept : true ? <AddTasl/> : <TodoForm/>
 // ต้องใช้ State
 
 
-/*
-  CC4 - React State
+/* CC4 - React State
     = useState(initialState:any)
     //  element 1 : current State
     //  element 2 : Fn สำหรับ SetState
+    // เมื่อ State เปลี่ยน Function Component จะ Redrender
+    // Rerender == Code ทั้งหมดใน FC จะถูกรันใหม่ 1 ครั้ง
 */
 //  #1 : FC = Function Component (Render)
 function TodoCreate() {
@@ -48,7 +47,8 @@ function TodoCreate() {
     <>
 
       {isOpenForm ? (
-        <TodoForm />
+        <TodoForm  textSubmit="Add Task"
+        setisOpenForm={setisOpenForm}/>
       ) : (<div
         className={styles.todo__create}
         onClick={handleClick}
