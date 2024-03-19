@@ -35,7 +35,6 @@ function TodoForm(props) {
   const handleSubmit = function (event) {
     // 1. PreventDefault
     event.preventDefault();
-    console.log("submit");
     // 2. รู้ก่อนว่า User พิมพ์อะไร (อยู่ใน state : taskInput)
     // 3. FormValidation
     // case1 : submit ได้
