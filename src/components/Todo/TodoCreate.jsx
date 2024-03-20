@@ -1,5 +1,4 @@
 
-import { FaPlus } from 'react-icons/fa';
 import { HiPlus } from 'react-icons/hi';
 import { useState } from 'react';
 
@@ -35,7 +34,7 @@ Concept : true ? <AddTasl/> : <TodoForm/>
     // Rerender == Code ทั้งหมดใน FC จะถูกรันใหม่ 1 ครั้ง
 */
 //  #1 : FC = Function Component (Render)
-function TodoCreate() {
+function TodoCreate(props) {
   const [isOpenForm, setisOpenForm] = useState(false)
   // #2 : JS Function (Logic)
   const handleClick = function (event) {
@@ -48,7 +47,9 @@ function TodoCreate() {
 
       {isOpenForm ? (
         <TodoForm  textSubmit="Add Task"
-        setisOpenForm={setisOpenForm}/>
+        setisOpenForm={setisOpenForm}
+        data={props.data}
+        setTodo={props.setTodo}/>
       ) : (<div
         className={styles.todo__create}
         onClick={handleClick}
@@ -63,3 +64,5 @@ function TodoCreate() {
 }
 
 export default TodoCreate;
+
+

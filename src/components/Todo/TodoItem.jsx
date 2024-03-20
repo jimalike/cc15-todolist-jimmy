@@ -4,11 +4,16 @@ import { FaTrashAlt, FaPen } from 'react-icons/fa';
 import { HiOutlineCheck } from 'react-icons/hi';
 import TodoForm from './TodoForm';
 
+/*
 
-function TodoItem({task, done, date}) {
+data = Array<{id:number, tasl:string, status: boolean, due_date:string}>
+*/ 
+
+
+function TodoItem({id, task, done, date}) {
 
     const [isOpenForm, setisOpenForm] = useState(false)
-
+    console.log(id);
     const handleClick = function (event) {
         setisOpenForm(!isOpenForm)
     }

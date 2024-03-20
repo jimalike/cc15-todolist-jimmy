@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import {Button} from '../Common/Button/Button'
+import { nanoid } from 'nanoid';
+import { Button } from '../Common/Button/Button'
 import styles from './TodoForm.module.scss';
 
 /*
   props = {
     textSubmit : string 
   }
-*/ 
+*/
 
 /*
 CC1 - Form Handle
@@ -39,34 +40,50 @@ function TodoForm(props) {
     // 3. FormValidation
     // case1 : submit ได้
     // case2 : submit ไม่้ได้ => แสดง Error
-    if (taskInput.trim() === '' ) {
+    if (taskInput.trim() === '') {
       console.log("Error");
       setIsError(true);
+
       return;
-    } 
+    }
+    console.log('submit === Create new Todo');
+    //  Create NewTodo
+    // 1 - ส่ง Request ไปหลังบ้านเพื่อ save ลง Database
+    // 2 - ทำการอัพเดท State ของ AllTodo == React ทำการ Rerender
+    // data = []
+    const newTodo = {
+      id: nanoid(),
+      task: taskInput,
+      status: false,
+      due_date: '2023-01-09'
+    };
+    // const newTodoLists = [newTodo, ...props.data];
+
+    props.setTodo(prev => [newTodo, ...prev])
+    props.setisOpenForm(false)
   }
 
   const handleCancel = function () {
     // correctName : setisOpenForm(false)
     // incorrectName : undefined(false) => getting Error
     props.setisOpenForm(false)
-    
+
     console.log('cancel');
   }
   return (
     <form onSubmit={handleSubmit} className={styles.todo__form__container}>
       {/*	Body */}
-      <input className={styles.todo__form__input} 
-      placeholder='Task Name'
-      value={taskInput}
-      onChange={handleChangeInput}
-       />
+      <input className={styles.todo__form__input}
+        placeholder='Task Name'
+        value={taskInput}
+        onChange={handleChangeInput}
+      />
 
       {/*Form Footer */}
       <div className={styles.todo__form__footer}>
         {isError ? <p className={styles.todo__error}>Title is required</p> : null}
         <div className={styles.todo__form__buttons}>
-          <Button text='Cancel' active={false} type="button" onClick={handleCancel}/>
+          <Button text='Cancel' active={false} type="button" onClick={handleCancel} />
           <Button text={props.textSubmit} active={true} type="submit" />
         </div>
       </div>
